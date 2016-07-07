@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:foregroundTintMode="src_atop">
+
+    <!--
+<android.support.v7.widget.CardView
+    android:id="@+id/card_view_row"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="2dp"
+    card_view:contentPadding="10dp">
+
+    <!-android:text="Sunday afternoon this will be happening"-->
+    <!--android:text="@string/string_gong"-->
+    <!--android:text="Posted by: #User23"-->
+<!--
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:id="@+id/textEventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/textEventDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:layout_below="@+id/textEventTitle"
+                />
+
+        <TextView
+                android:id="@+id/textPostedby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textEventDetails"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>-->
+
+
+
+
 
     <!--ADD your card view here-->
+
     <android.support.v7.widget.CardView
         android:id="@+id/card_view_row"
         android:layout_gravity="center"
@@ -13,11 +66,18 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         card_view:cardCornerRadius="2dp"
-        card_view:contentPadding="10dp">
+        card_view:contentPadding="10dp"
+        card_view:cardElevation="10dp"
+        android:backgroundTint="@color/colorAccent"
+        android:background="#f51515"
+        android:foreground="#4fffffff">
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:background="#fadd04"
+            android:backgroundTintMode="add"
+            android:foregroundTintMode="src_atop">
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,7 +87,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/user"
-                    android:layout_alignParentTop="true" />
+                    android:layout_alignParentTop="true"
+                    android:backgroundTint="#f20f0f"
+                    android:foreground="#9e63fe40"
+                    />
 
                 <TextView
                     android:id="@+id/textEventTitle"
@@ -44,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Posted by: #User23"
-                    android:layout_above="@+id/textEventMessage"
+                    android:layout_above="@+id/textEventDetails"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
                 <TextView
@@ -55,7 +118,8 @@
                     android:layout_toRightOf="@+id/imgUser"
                     android:layout_below="@+id/textEventTitle"
                     android:layout_toEndOf="@+id/imgUser"
-                    android:text="Sunday afternoon this will be happening"/>
+                    android:text="Sunday afternoon this will be happening"
+                    android:backgroundTint="#fae102" />
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/iconItemGroup"

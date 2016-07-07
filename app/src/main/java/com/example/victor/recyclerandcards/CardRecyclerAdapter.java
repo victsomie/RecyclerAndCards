@@ -20,7 +20,7 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
 
     //Create the data holder and #Create its constructor (That matches )
     //This represents how the text will be displayed
-    public class DataHolder extends RecyclerView.ViewHolder{
+    public static class DataHolder extends RecyclerView.ViewHolder{
 
         //Reference the items in your card by ID and initialize them inside the Dataholder constructor below
         TextView eventTitle;
@@ -36,13 +36,13 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
             super(itemView);
 
             //references below
-            eventImage = (ImageView) itemView.findViewById(R.id.imgUser);
+//            eventImage = (ImageView) itemView.findViewById(R.id.imgUser);
             eventTitle = (TextView) itemView.findViewById(R.id.textEventTitle);
             eventPoster = (TextView) itemView.findViewById(R.id.textPostedby);
             eventDetails = (TextView) itemView.findViewById(R.id.textEventDetails);
-            eventJoin= (Button) itemView.findViewById(R.id.buttonJoin);
-            eventLike= (Button) itemView.findViewById(R.id.buttonLike);
-            eventShare= (Button) itemView.findViewById(R.id.buttonShare);
+//            eventJoin= (Button) itemView.findViewById(R.id.buttonJoin);
+//            eventLike= (Button) itemView.findViewById(R.id.buttonLike);
+//            eventShare= (Button) itemView.findViewById(R.id.buttonShare);
 
         }
     }
@@ -50,8 +50,8 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
 
 
     //This is your class constructor that will take Arraylist containing DataObject(you definedd this in a different class) you created
-    public CardRecyclerAdapter(ArrayList<DataObject> mDataset) {
-        mDataset = mDataset;
+    public CardRecyclerAdapter(ArrayList<DataObject> myDataset) { //Note there is a difference between myDataset and mDataset
+       mDataset = myDataset;
     }
 
 
@@ -61,13 +61,9 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
     public DataHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         //Inflate you card view
-        View view = LayoutInflater
-                .from(parent.getContext())
-                .inflate(R.layout.my_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_card, parent, false);
 
-        DataHolder dataHolder = new DataHolder(view); //This say, our data holder viewis the view we have defined above(Which is our card)
-
-        return dataHolder; //Returns that dataHolder, which now is the card
+        return new DataHolder(view); //Returns that dataHolder, which now is the card
     }
 
     @Override
@@ -76,8 +72,8 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
 
         //Inside the onBindViewHolder, bind the items in the arralist(mDataSet) to the ones in your card view (in the DataHolder)
         holder.eventTitle.setText(mDataset.get(position).getmText1());
-        holder.eventPoster.setText(mDataset.get(position).getmText2());
-        holder.eventDetails.setText(mDataset.get(position).getmText3());
+        holder.eventDetails.setText(mDataset.get(position).getmText2());
+        holder.eventPoster.setText(mDataset.get(position).getmText3());
     }
 
 
@@ -89,6 +85,6 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mDataset.size();
     }
 }
