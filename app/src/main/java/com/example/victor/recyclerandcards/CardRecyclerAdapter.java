@@ -81,7 +81,7 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
     }
 
 
-    //Method to data obects into our arraylist
+    //Method to data objects into our arraylist (mDataSet)
     public void addItem(DataObject dataObj, int index) {
         mDataset.add(index, dataObj); //added the item passed to that index
         notifyItemInserted(index); //Notifies of the insertion
@@ -91,5 +91,4 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
     public int getItemCount() {
         return 0;
     }
-
 }
