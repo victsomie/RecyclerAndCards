@@ -80,10 +80,16 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
         holder.eventDetails.setText(mDataset.get(position).getmText3());
     }
 
+
+    //Method to data obects into our arraylist
+    public void addItem(DataObject dataObj, int index) {
+        mDataset.add(index, dataObj); //added the item passed to that index
+        notifyItemInserted(index); //Notifies of the insertion
+    }
+
     @Override
     public int getItemCount() {
         return 0;
     }
-
 
 }
