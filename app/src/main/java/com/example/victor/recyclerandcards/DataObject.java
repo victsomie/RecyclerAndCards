@@ -3,6 +3,8 @@ package com.example.victor.recyclerandcards;
 /**
  * Created by victor on 7/7/16.
  */
+
+//This class represents the data we shall be recycling as an object
 public class DataObject {
     private String mText1;
     private String mText2;
