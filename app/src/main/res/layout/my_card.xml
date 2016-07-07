@@ -48,7 +48,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
                 <TextView
-                    android:id="@+id/textEventMessage"
+                    android:id="@+id/textEventDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/activity_horizontal_margin"
