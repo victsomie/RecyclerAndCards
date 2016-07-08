@@ -6,6 +6,7 @@
     <!--android:layout_height="match_parent">-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -82,15 +83,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/userGroup">
-                <ImageView
+
+                <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/imgUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/user"
-                    android:layout_alignParentTop="true"
-                    android:backgroundTint="#f20f0f"
-                    android:foreground="#9e63fe40"
-                    />
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#8BC34A"
+                    android:layout_alignParentTop="true"/>
+                <!--<ImageView-->
+                    <!--android:id="@+id/imgUser"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:src="@drawable/user"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:backgroundTint="#f20f0f"-->
+                    <!--android:foreground="#9e63fe40"-->
+                    <!--/>-->
 
                 <TextView
                     android:id="@+id/textEventTitle"
